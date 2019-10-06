@@ -1,0 +1,42 @@
+<h3>{{titulo}}</h3>
+
+<strong>Empleado estrella:</strong>
+<br />
+<br />
+<div *ngIf="trabajador_externo == true">
+    <h4>Trabajador Externo</h4>
+    <ul>
+        <li>{{trabajadores[0].nombre}}</li>
+        <li>{{trabajadores[0].edad}}</li>
+        <li>{{trabajadores[0].cargo}}</li>
+        <li *ngIf="trabajadores[0].contratado == true">Está contratado</li>
+        <li *ngIf="trabajadores[0].contratado == false">No está contratado</li>
+    </ul>
+    <button (click)="cambiarExterno(false)">Mostrar empleado</button>
+</div>
+
+<div *ngIf="trabajador_externo == false">
+    <h4>Empleado</h4>
+    <ul>
+        <li>{{empleado.nombre}}</li>
+        <li>{{empleado.edad}}</li>
+        <li>{{empleado.cargo}}</li>
+        <li *ngIf="empleado.contratado == true">Está contratado</li>
+        <li *ngIf="empleado.contratado == false">No está contratado</li>
+    </ul>
+    <button (click)="cambiarExterno(true)">Mostrar trabajador</button>
+</div>
+<hr/>
+<h3>Listado de empleados</h3>
+<ul>
+    <li *ngFor="let empleado of trabajadores; let i = index">
+        <strong>Empleado {{i+1}}</strong>
+        <ul>            
+            <li>{{empleado.nombre}}</li>
+            <li>{{empleado.edad}}</li>
+            <li>{{empleado.cargo}}</li>
+            <li *ngIf="empleado.contratado == true">Está contratado</li>
+            <li *ngIf="empleado.contratado == false">No está contratado</li>
+        </ul>
+    </li>
+</ul>
