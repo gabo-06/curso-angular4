@@ -23,3 +23,6 @@ export class Empleado
         public contratado: boolean
     ){}
 }
+
+
+// marujaaaaaaaaaaaaaaaaaaaa

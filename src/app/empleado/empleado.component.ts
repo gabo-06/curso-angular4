@@ -35,3 +35,4 @@ export class EmpleadoComponent implements OnInit
         this.trabajador_externo = valor;
     }
 }
+
